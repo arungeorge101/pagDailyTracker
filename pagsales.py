@@ -27,14 +27,14 @@ for singleCompany in companyList:
         dayProfit = filter_dayBook['Profit'].sum()
 
         days.append(singleDate.strftime("%m-%d-%y"))
-        totalSale.append("{:.2f}".format(daySale))
-        totalProfit.append("{:.2f}".format(dayProfit))
+        totalSale.append(round(daySale,2))
+        totalProfit.append(round(dayProfit,2))
 
     consolidated_df = pd.DataFrame(list(zip(days,totalSale,totalProfit)), columns=columns)
     consolidated_df.to_excel(writer,sheet_name=singleCompany)
 
 writer.save()
 
-print('')
+print('processing completed for all companies from ' + fromDate + ' to ' + toDate)
 
 
