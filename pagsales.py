@@ -55,5 +55,3 @@ for singleCompany in companyList:
 writer.save()
 
 print('processing completed for all companies from ' + fromDate + ' to ' + toDate)
-
-
